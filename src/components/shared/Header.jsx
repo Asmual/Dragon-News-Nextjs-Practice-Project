@@ -5,26 +5,27 @@ import { format } from "date-fns";
 
 const Header = () => {
   return (
-    <header className="text-center pt-8 pb-4 space-y-2">
-      <Link href="/" className="inline-block">
+    <header className="text-center pt-5 pb-2 space-y-1.5">
+      <Link href="/" className="inline-block transition-transform hover:scale-[1.01]">
         <Image
           src={logo}
           alt="The Dragon News"
-          width={450}
-          height={80}
+          width={360}
+          height={65}
           priority
-          className="mx-auto h-auto max-w-full"
+          className="mx-auto h-auto max-w-full drop-shadow-sm"
         />
       </Link>
-      <p className="text-[#706F6F] text-base font-normal">
+      <p className="text-xs sm:text-sm text-slate-500 font-normal tracking-wide">
         Journalism Without Fear or Favour
       </p>
-      <p className="text-base font-medium text-[#706F6F]">
-        <span className="font-semibold text-[#403F3F]">
+      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-xs text-slate-600 font-medium border border-slate-200/60 shadow-xs">
+        <span className="font-semibold text-slate-800">
           {format(new Date(), "EEEE")}
         </span>
-        , {format(new Date(), "MMMM dd, yyyy")}
-      </p>
+        <span>•</span>
+        <span>{format(new Date(), "MMMM dd, yyyy")}</span>
+      </div>
     </header>
   );
 };

@@ -20,11 +20,11 @@ const NewsCard = ({ news }) => {
   const starsCount = Math.round(Number(ratingNumber) || 4);
 
   return (
-    <article className="border border-base-200 rounded-lg overflow-hidden bg-base-100 shadow-sm hover:shadow-md transition">
+    <article className="group bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-xs hover:shadow-lg hover:shadow-slate-200/60 hover:border-slate-300 transition-all duration-300">
       {/* Top author bar */}
-      <div className="bg-[#F3F3F3] px-5 py-3 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full overflow-hidden bg-gray-300 relative flex-shrink-0">
+      <div className="bg-slate-50/80 px-4 py-2.5 flex items-center justify-between border-b border-slate-100">
+        <div className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-full overflow-hidden bg-slate-200 relative flex-shrink-0 ring-1 ring-slate-300/60">
             <Image
               src={authorImage}
               alt={author?.name || "Author"}
@@ -34,10 +34,10 @@ const NewsCard = ({ news }) => {
             />
           </div>
           <div>
-            <h5 className="font-semibold text-sm text-[#403F3F]">
-              {author?.name || "Awlad Hossain"}
+            <h5 className="font-semibold text-xs text-slate-800 leading-tight">
+              {author?.name || "News Desk"}
             </h5>
-            <p className="text-xs text-[#706F6F]">
+            <p className="text-[11px] text-slate-400">
               {author?.published_date
                 ? new Date(author.published_date).toISOString().split("T")[0]
                 : "2025-08-21"}
@@ -45,15 +45,15 @@ const NewsCard = ({ news }) => {
           </div>
         </div>
 
-        {/* Action icons */}
-        <div className="flex items-center gap-3 text-[#706F6F]">
+        {/* Action icons with curved hover background */}
+        <div className="flex items-center gap-1 text-slate-400">
           <button
             type="button"
             aria-label="Bookmark"
-            className="hover:text-primary transition cursor-pointer"
+            className="p-1.5 rounded-lg hover:bg-slate-200/60 hover:text-slate-700 transition"
           >
             <svg
-              className="w-5 h-5"
+              className="w-4 h-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -69,10 +69,10 @@ const NewsCard = ({ news }) => {
           <button
             type="button"
             aria-label="Share"
-            className="hover:text-primary transition cursor-pointer"
+            className="p-1.5 rounded-lg hover:bg-slate-200/60 hover:text-slate-700 transition"
           >
             <svg
-              className="w-5 h-5"
+              className="w-4 h-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -89,74 +89,41 @@ const NewsCard = ({ news }) => {
       </div>
 
       {/* Main card body */}
-      <div className="p-5 space-y-4">
+      <div className="p-4 space-y-3">
         <Link href={`/news/${_id}`}>
-          <h3 className="text-xl font-bold text-[#403F3F] leading-snug hover:text-primary transition cursor-pointer">
+          <h3 className="text-base sm:text-lg font-bold text-slate-800 leading-snug group-hover:text-rose-600 transition-colors line-clamp-2">
             {title}
           </h3>
         </Link>
 
         {displayImage && (
-          <div className="relative w-full h-64 rounded-md overflow-hidden bg-gray-100">
+          <div className="relative w-full h-52 rounded-xl overflow-hidden bg-slate-100">
             <Image
               src={displayImage}
               alt={title || "News"}
               fill
-              className="object-cover"
+              className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
               unoptimized
             />
           </div>
         )}
 
-        <div className="text-[#706F6F] text-sm leading-relaxed">
+        <div className="text-slate-500 text-xs sm:text-sm leading-relaxed">
           {details ? (
             <>
-              {details.length > 250 ? `${details.slice(0, 250)}...` : details}{" "}
-              <Link
-                href={`/news/${_id}`}
-                className="text-[#FF8C47] font-semibold hover:underline inline-block ml-1"
-              >
-                Read More
-              </Link>
+              {details.length > 200 ? `${details.slice(0, 200)}...` : details}
             </>
-          ) : (
-            <Link
-              href={`/news/${_id}`}
-              className="text-[#FF8C47] font-semibold hover:underline"
-            >
-              Read More
-            </Link>
-          )}
+          ) : null}
         </div>
 
-        <div className="border-t border-base-200 my-2"></div>
-
-        {/* Footer info: Rating and Views */}
-        <div className="flex items-center justify-between text-sm pt-1">
-          {/* Rating */}
-          <div className="flex items-center gap-2">
-            <div className="flex text-[#FF8C47]">
-              {[...Array(5)].map((_, i) => (
-                <svg
-                  key={i}
-                  className={`w-4 h-4 ${
-                    i < starsCount ? "fill-[#FF8C47]" : "fill-gray-300"
-                  }`}
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-            </div>
-            <span className="font-semibold text-[#403F3F]">
-              {ratingNumber}
-            </span>
-          </div>
-
-          {/* Views */}
-          <div className="flex items-center gap-2 text-[#706F6F]">
+        <div className="pt-1 flex items-center justify-between">
+          <Link
+            href={`/news/${_id}`}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-50 text-rose-600 hover:bg-rose-100 text-xs font-semibold transition-all duration-200 active:scale-95"
+          >
+            Read More
             <svg
-              className="w-4 h-4"
+              className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -165,16 +132,56 @@ const NewsCard = ({ news }) => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                d="M9 5l7 7-7 7"
               />
             </svg>
-            <span className="font-medium">{total_view ?? 0}</span>
+          </Link>
+
+          {/* Rating and Views */}
+          <div className="flex items-center gap-4 text-xs">
+            {/* Stars */}
+            <div className="flex items-center gap-1.5 bg-amber-50/80 px-2 py-1 rounded-md border border-amber-200/60">
+              <div className="flex text-amber-500">
+                {[...Array(5)].map((_, i) => (
+                  <svg
+                    key={i}
+                    className={`w-3 h-3 ${
+                      i < starsCount ? "fill-amber-400" : "fill-slate-200"
+                    }`}
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <span className="font-bold text-amber-700 text-[11px]">
+                {ratingNumber}
+              </span>
+            </div>
+
+            {/* Views */}
+            <div className="flex items-center gap-1 text-slate-400">
+              <svg
+                className="w-3.5 h-3.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                />
+              </svg>
+              <span className="font-medium">{total_view ?? 0}</span>
+            </div>
           </div>
         </div>
       </div>

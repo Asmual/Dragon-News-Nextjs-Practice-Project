@@ -5,24 +5,27 @@ export const metadata = {
 
 const AboutPage = () => {
   return (
-    <main className="max-w-4xl mx-auto px-4 my-12 space-y-8">
-      <div className="text-center space-y-3">
-        <h1 className="text-3xl md:text-4xl font-bold text-[#403F3F]">
+    <main className="max-w-4xl mx-auto px-4 my-6 space-y-6">
+      <div className="text-center space-y-2">
+        <span className="text-xs font-bold text-rose-600 uppercase tracking-widest bg-rose-50 px-3 py-1 rounded-full border border-rose-200/60">
+          Our Story
+        </span>
+        <h1 className="text-2xl sm:text-3xl font-bold text-slate-800">
           About Dragon News
         </h1>
-        <p className="text-lg text-[#706F6F] max-w-2xl mx-auto">
+        <p className="text-xs sm:text-sm text-slate-500 max-w-xl mx-auto leading-relaxed">
           Delivering reliable, unbiased, and timely news from around the world.
         </p>
       </div>
 
-      <div className="bg-base-100 border border-base-200 rounded-xl p-8 md:p-10 shadow-sm space-y-6 text-[#706F6F] leading-relaxed">
+      <div className="bg-white border border-slate-200/80 rounded-2xl p-5 sm:p-7 shadow-xs space-y-5 text-slate-600 text-xs sm:text-sm leading-relaxed">
         <div>
-          <h2 className="text-2xl font-bold text-[#403F3F] mb-3">
+          <h2 className="text-base sm:text-lg font-bold text-slate-800 mb-2">
             Our Mission & Commitment
           </h2>
           <p>
-            Dragon News was founded on a simple yet unyielding principle:{" "}
-            <span className="font-semibold text-[#403F3F]">
+            Dragon News was founded on a simple yet unyielding principle:{' '}
+            <span className="font-semibold text-rose-600">
               Journalism Without Fear or Favour
             </span>
             . In a world saturated with disinformation and rapid news cycles, our
@@ -31,32 +34,32 @@ const AboutPage = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-          <div className="bg-[#F3F3F3] p-5 rounded-lg space-y-2">
-            <h3 className="font-bold text-lg text-[#403F3F]">Integrity</h3>
-            <p className="text-sm">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 pt-2">
+          <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/60 space-y-1.5 hover:shadow-xs transition">
+            <h3 className="font-bold text-xs sm:text-sm text-slate-800">Integrity</h3>
+            <p className="text-[11px] sm:text-xs text-slate-500">
               We uphold the highest journalistic standards with strict fact-checking
               and honest reporting.
             </p>
           </div>
-          <div className="bg-[#F3F3F3] p-5 rounded-lg space-y-2">
-            <h3 className="font-bold text-lg text-[#403F3F]">Independence</h3>
-            <p className="text-sm">
+          <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/60 space-y-1.5 hover:shadow-xs transition">
+            <h3 className="font-bold text-xs sm:text-sm text-slate-800">Independence</h3>
+            <p className="text-[11px] sm:text-xs text-slate-500">
               Editorial decisions are free from commercial or political influence,
               ensuring objective coverage.
             </p>
           </div>
-          <div className="bg-[#F3F3F3] p-5 rounded-lg space-y-2">
-            <h3 className="font-bold text-lg text-[#403F3F]">Inclusivity</h3>
-            <p className="text-sm">
+          <div className="bg-slate-50 p-4 rounded-xl border border-slate-200/60 space-y-1.5 hover:shadow-xs transition">
+            <h3 className="font-bold text-xs sm:text-sm text-slate-800">Inclusivity</h3>
+            <p className="text-[11px] sm:text-xs text-slate-500">
               We give voice to diverse perspectives, covering politics, sports,
               culture, science, and more.
             </p>
           </div>
         </div>
 
-        <div className="pt-4 border-t border-base-200">
-          <h2 className="text-2xl font-bold text-[#403F3F] mb-3">Our Global Reach</h2>
+        <div className="pt-2 border-t border-slate-100">
+          <h2 className="text-base sm:text-lg font-bold text-slate-800 mb-2">Our Global Reach</h2>
           <p>
             With correspondents across the globe and a 24/7 digital newsroom,
             Dragon News brings breaking headlines, investigative investigations,

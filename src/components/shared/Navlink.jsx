@@ -9,10 +9,10 @@ const Navlink = ({ href, children }) => {
   return (
     <Link
       href={href}
-      className={`transition pb-1 ${
+      className={`px-3 py-1.5 rounded-lg text-sm transition-all duration-200 ${
         isActive
-          ? "text-[#403F3F] font-bold border-b-2 border-[#D72050]"
-          : "text-[#706F6F] hover:text-[#403F3F]"
+          ? "text-rose-600 font-semibold bg-rose-50 shadow-xs"
+          : "text-slate-600 font-medium hover:text-slate-900 hover:bg-slate-100"
       }`}
     >
       {children}

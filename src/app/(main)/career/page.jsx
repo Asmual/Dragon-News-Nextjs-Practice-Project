@@ -30,48 +30,55 @@ const jobOpenings = [
     title: "Multimedia Photojournalist & Video Editor",
     department: "Media Production",
     location: "Dhaka, Bangladesh",
-    type: "Part-Time / Hybrid",
+    type: "Hybrid",
   },
 ];
 
 const CareerPage = () => {
   return (
-    <main className="max-w-4xl mx-auto px-4 my-12 space-y-8">
-      <div className="text-center space-y-3">
-        <h1 className="text-3xl md:text-4xl font-bold text-[#403F3F]">
+    <main className="max-w-4xl mx-auto px-4 my-6 space-y-6">
+      <div className="text-center space-y-2">
+        <span className="text-xs font-bold text-rose-600 uppercase tracking-widest bg-rose-50 px-3 py-1 rounded-full border border-rose-200/60">
+          We are Hiring
+        </span>
+        <h1 className="text-2xl sm:text-3xl font-bold text-slate-800">
           Careers at Dragon News
         </h1>
-        <p className="text-lg text-[#706F6F] max-w-2xl mx-auto">
+        <p className="text-xs sm:text-sm text-slate-500 max-w-xl mx-auto leading-relaxed">
           Help us build the next generation of trustworthy, high-impact journalism.
         </p>
       </div>
 
-      <div className="bg-base-100 border border-base-200 rounded-xl p-8 md:p-10 shadow-sm space-y-6">
-        <div>
-          <h2 className="text-2xl font-bold text-[#403F3F] mb-2">Open Positions</h2>
-          <p className="text-sm text-[#706F6F]">
-            We are always on the lookout for talented journalists, editors, and engineers.
+      <div className="bg-white border border-slate-200/80 rounded-2xl p-5 sm:p-7 shadow-xs space-y-4">
+        <div className="border-b border-slate-100 pb-3">
+          <h2 className="text-base sm:text-lg font-bold text-slate-800">Available Roles</h2>
+          <p className="text-xs text-slate-400">
+            Explore active opportunities across our journalism and tech departments.
           </p>
         </div>
 
-        <div className="divide-y divide-base-200">
+        <div className="divide-y divide-slate-100">
           {jobOpenings.map((job) => (
             <div
               key={job.id}
-              className="py-5 flex flex-col md:flex-row md:items-center justify-between gap-4"
+              className="py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 group"
             >
               <div>
-                <h3 className="font-bold text-lg text-[#403F3F]">{job.title}</h3>
-                <div className="flex flex-wrap gap-3 text-xs text-[#706F6F] mt-1">
+                <h3 className="font-bold text-xs sm:text-sm text-slate-800 group-hover:text-rose-600 transition">
+                  {job.title}
+                </h3>
+                <div className="flex flex-wrap items-center gap-2 text-[11px] text-slate-400 mt-1">
                   <span>{job.department}</span>
                   <span>•</span>
                   <span>{job.location}</span>
                   <span>•</span>
-                  <span className="badge badge-sm badge-outline">{job.type}</span>
+                  <span className="bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-medium text-[10px]">
+                    {job.type}
+                  </span>
                 </div>
               </div>
 
-              <button className="btn bg-[#403F3F] hover:bg-neutral-800 text-white rounded-none px-5 py-2 text-sm self-start md:self-auto font-medium">
+              <button className="btn min-h-0 h-8 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold shadow-xs hover:shadow-slate-900/15 border-none transition-all duration-200 active:scale-95 self-start sm:self-auto">
                 Apply Now
               </button>
             </div>

@@ -9,12 +9,12 @@ import instagram from "@/assets/instagram.png";
 
 const RightsideBar = () => {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-5">
       {/* Login With */}
-      <div>
-        <h2 className="text-xl font-bold mb-4 text-[#403F3F]">Login With</h2>
+      <div className="bg-white p-3.5 rounded-2xl border border-slate-200/80 shadow-xs">
+        <h2 className="text-sm font-bold mb-3 text-slate-800 px-1">Login With</h2>
         <div className="flex flex-col gap-2">
-          <button className="btn btn-outline border-blue-500 text-blue-600 hover:bg-blue-500 hover:text-white flex items-center justify-center gap-2 w-full normal-case font-medium">
+          <button className="btn min-h-0 h-9 bg-white hover:bg-slate-50 border border-slate-300/80 text-slate-700 hover:text-slate-900 rounded-xl flex items-center justify-center gap-2 w-full normal-case font-medium text-xs shadow-2xs hover:shadow-sm transition-all duration-200">
             <svg className="w-4 h-4" viewBox="0 0 24 24">
               <path
                 fill="#4285F4"
@@ -35,7 +35,7 @@ const RightsideBar = () => {
             </svg>
             Login with Google
           </button>
-          <button className="btn btn-outline border-neutral-700 text-neutral-800 hover:bg-neutral-800 hover:text-white flex items-center justify-center gap-2 w-full normal-case font-medium">
+          <button className="btn min-h-0 h-9 bg-slate-900 hover:bg-slate-800 text-white rounded-xl flex items-center justify-center gap-2 w-full normal-case font-medium text-xs shadow-xs hover:shadow-slate-900/15 border-none transition-all duration-200">
             <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
               <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
             </svg>
@@ -45,17 +45,17 @@ const RightsideBar = () => {
       </div>
 
       {/* Find Us On */}
-      <div>
-        <h2 className="text-xl font-bold mb-4 text-[#403F3F]">Find Us On</h2>
-        <div className="border border-base-300 rounded-lg overflow-hidden divide-y divide-base-300">
+      <div className="bg-white p-3.5 rounded-2xl border border-slate-200/80 shadow-xs">
+        <h2 className="text-sm font-bold mb-3 text-slate-800 px-1">Find Us On</h2>
+        <div className="border border-slate-200/70 rounded-xl overflow-hidden divide-y divide-slate-100">
           <a
             href="https://facebook.com"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-3 p-4 hover:bg-base-200 transition text-[#706F6F] font-medium"
+            className="flex items-center gap-2.5 p-2.5 hover:bg-slate-50 transition text-slate-600 text-xs font-medium"
           >
-            <div className="w-8 h-8 rounded-full bg-base-200 flex items-center justify-center">
-              <Image src={fb} alt="Facebook" width={16} height={16} />
+            <div className="w-6 h-6 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
+              <Image src={fb} alt="Facebook" width={14} height={14} />
             </div>
             Facebook
           </a>
@@ -63,10 +63,10 @@ const RightsideBar = () => {
             href="https://twitter.com"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-3 p-4 hover:bg-base-200 transition text-[#706F6F] font-medium"
+            className="flex items-center gap-2.5 p-2.5 hover:bg-slate-50 transition text-slate-600 text-xs font-medium"
           >
-            <div className="w-8 h-8 rounded-full bg-base-200 flex items-center justify-center">
-              <Image src={twitter} alt="Twitter" width={16} height={16} />
+            <div className="w-6 h-6 rounded-lg bg-sky-50 flex items-center justify-center flex-shrink-0">
+              <Image src={twitter} alt="Twitter" width={14} height={14} />
             </div>
             Twitter
           </a>
@@ -74,10 +74,10 @@ const RightsideBar = () => {
             href="https://instagram.com"
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-3 p-4 hover:bg-base-200 transition text-[#706F6F] font-medium"
+            className="flex items-center gap-2.5 p-2.5 hover:bg-slate-50 transition text-slate-600 text-xs font-medium"
           >
-            <div className="w-8 h-8 rounded-full bg-base-200 flex items-center justify-center">
-              <Image src={instagram} alt="Instagram" width={16} height={16} />
+            <div className="w-6 h-6 rounded-lg bg-pink-50 flex items-center justify-center flex-shrink-0">
+              <Image src={instagram} alt="Instagram" width={14} height={14} />
             </div>
             Instagram
           </a>
@@ -85,42 +85,45 @@ const RightsideBar = () => {
       </div>
 
       {/* Q-Zone */}
-      <div className="bg-[#F3F3F3] rounded-lg p-4 space-y-4">
-        <h2 className="text-xl font-bold text-[#403F3F]">Q-Zone</h2>
-        <div className="space-y-4">
-          <div className="bg-white p-3 rounded-lg border border-dashed border-gray-300 flex flex-col items-center">
-            <Image src={swimming} alt="Swimming" className="rounded w-full object-cover" />
-            <span className="font-semibold text-gray-700 mt-2 text-sm">Swimming</span>
+      <div className="bg-white p-3.5 rounded-2xl border border-slate-200/80 shadow-xs space-y-3">
+        <h2 className="text-sm font-bold text-slate-800 px-1">Q-Zone</h2>
+        <div className="space-y-2.5">
+          <div className="bg-slate-50 p-2 rounded-xl border border-slate-200/60 flex flex-col items-center">
+            <Image src={swimming} alt="Swimming" className="rounded-lg w-full object-cover" />
+            <span className="font-semibold text-slate-700 mt-1.5 text-xs">Swimming</span>
           </div>
-          <div className="bg-white p-3 rounded-lg border border-dashed border-gray-300 flex flex-col items-center">
-            <Image src={classImg} alt="Class" className="rounded w-full object-cover" />
-            <span className="font-semibold text-gray-700 mt-2 text-sm">Class</span>
+          <div className="bg-slate-50 p-2 rounded-xl border border-slate-200/60 flex flex-col items-center">
+            <Image src={classImg} alt="Class" className="rounded-lg w-full object-cover" />
+            <span className="font-semibold text-slate-700 mt-1.5 text-xs">Class</span>
           </div>
-          <div className="bg-white p-3 rounded-lg border border-dashed border-gray-300 flex flex-col items-center">
-            <Image src={playground} alt="Play Ground" className="rounded w-full object-cover" />
-            <span className="font-semibold text-gray-700 mt-2 text-sm">Play Ground</span>
+          <div className="bg-slate-50 p-2 rounded-xl border border-slate-200/60 flex flex-col items-center">
+            <Image src={playground} alt="Play Ground" className="rounded-lg w-full object-cover" />
+            <span className="font-semibold text-slate-700 mt-1.5 text-xs">Play Ground</span>
           </div>
         </div>
       </div>
 
       {/* Advertisement Banner */}
       <div
-        className="relative rounded-lg overflow-hidden text-center text-white py-14 px-8 flex flex-col items-center justify-center shadow-lg"
+        className="relative rounded-2xl overflow-hidden text-center text-white py-10 px-5 flex flex-col items-center justify-center shadow-sm"
         style={{
           backgroundImage: `url(${bg.src})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="relative z-10 space-y-4">
-          <h3 className="text-2xl font-bold leading-tight">
+        <div className="absolute inset-0 bg-slate-950/70 backdrop-blur-2xs"></div>
+        <div className="relative z-10 space-y-2.5">
+          <span className="bg-rose-500/20 text-rose-300 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider border border-rose-500/30">
+            Special Edition
+          </span>
+          <h3 className="text-lg font-bold leading-tight">
             Create an Amazing Newspaper
           </h3>
-          <p className="text-xs text-gray-200 leading-relaxed max-w-xs">
-            Discover thousands of options, easy to customize layouts, one-click to import demo and much more.
+          <p className="text-[11px] text-slate-300 leading-relaxed max-w-xs">
+            Discover thousands of options, easy to customize layouts, one-click to import demo.
           </p>
-          <button className="btn bg-[#D72050] hover:bg-[#b51b43] text-white border-none rounded-none px-6 py-3 font-semibold text-sm">
+          <button className="btn min-h-0 h-9 bg-rose-600 hover:bg-rose-500 text-white border-none rounded-xl px-5 text-xs font-semibold shadow-md shadow-rose-600/30 transition-all duration-200 active:scale-95">
             Learn More
           </button>
         </div>
