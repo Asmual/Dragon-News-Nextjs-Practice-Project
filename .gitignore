@@ -39,3 +39,21 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# security & system environment configs
+config.bat
+.vscode/
+api.js
+!src/lib/api.js
+director.js
+
+# local development & documentation files
+agent.md
+agent.*.md
+AGENTS.md
+CLAUDE.md
+cloud.md
+Cloud.md
+git.txt
+my-git.txt
+
