@@ -1,8 +1,12 @@
+'use client';
+
+import { useState } from 'react';
 import Image from "next/image";
 import Link from "next/link";
 import demoThumb from "@/assets/demo-card-thumbnail.png";
 
 const LeftsideBar = ({ categories, activeID = "0" }) => {
+  const [clickedId, setClickedId] = useState(null);
   const categoryList = categories?.news_category || [];
 
   return (
@@ -18,6 +22,7 @@ const LeftsideBar = ({ categories, activeID = "0" }) => {
         <div className="flex flex-col gap-1">
           {categoryList.map((category) => {
             const isActive = String(activeID) === String(category.category_id);
+            const isClicked = clickedId === category.category_id;
             const href =
               category.category_id === "0"
                 ? "/"
@@ -27,6 +32,7 @@ const LeftsideBar = ({ categories, activeID = "0" }) => {
               <Link
                 key={category.category_id}
                 href={href}
+                onClick={() => setClickedId(category.category_id)}
                 className={`flex items-center justify-between py-2 px-3 rounded-xl text-xs sm:text-sm transition-all duration-200 ${
                   isActive
                     ? "bg-rose-50 text-rose-600 font-bold border border-rose-200/60 shadow-xs"
@@ -34,9 +40,11 @@ const LeftsideBar = ({ categories, activeID = "0" }) => {
                 }`}
               >
                 <span>{category.category_name}</span>
-                {isActive && (
+                {isClicked && !isActive ? (
+                  <span className="w-3.5 h-3.5 border-2 border-rose-600 border-t-transparent rounded-full animate-spin"></span>
+                ) : isActive ? (
                   <span className="w-1.5 h-1.5 rounded-full bg-rose-600"></span>
-                )}
+                ) : null}
               </Link>
             );
           })}

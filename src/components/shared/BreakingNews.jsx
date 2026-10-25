@@ -1,4 +1,5 @@
 import Marquee from "react-fast-marquee";
+import Link from "next/link";
 
 const news = [
   {
@@ -14,7 +15,7 @@ const news = [
     title: "Central Bank Announces New Monetary Policy to Control Inflation!",
   },
   {
-    id: "4",
+    id: "0282e0e58a5c404fbd15261f11c2ab6a",
     title: "Biden Pledges Nearly $3 Billion To Ukraine In Largest Military Aid Package!",
   },
 ];
@@ -29,14 +30,15 @@ const BreakingNews = () => {
         </span>
         <div className="flex-1 overflow-hidden font-medium text-slate-700 text-xs sm:text-sm">
           <Marquee pauseOnHover={true} speed={45}>
-            {news.map((n) => (
-              <span
-                key={n.id}
-                className="mr-10 hover:text-rose-600 transition cursor-pointer flex items-center gap-2"
+            {news.map((n, idx) => (
+              <Link
+                key={idx}
+                href={`/news/${n.id}`}
+                className="mr-10 hover:text-rose-600 transition cursor-pointer flex items-center gap-2 group"
               >
-                <span>{n.title}</span>
+                <span className="group-hover:underline">{n.title}</span>
                 <span className="text-slate-300">•</span>
-              </span>
+              </Link>
             ))}
           </Marquee>
         </div>
