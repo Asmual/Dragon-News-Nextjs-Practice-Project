@@ -55,3 +55,7 @@ Cloud.md
 git.txt
 my-git.txt
 
+
+*.orc
+myGit.txt
+public/fonts/
